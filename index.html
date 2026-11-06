@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一款纯浏览器运行的简洁五子棋游戏。">
+  <title>棋间 · 五子棋</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">●</span><div><p class="eyebrow">QUICK MATCH</p><h1>棋间 <span>五子棋</span></h1></div></div>
+      <div class="header-note"><span class="live-dot"></span>纯浏览器运行</div>
+    </header>
+    <section class="game-layout">
+      <div class="board-panel">
+        <div class="board-heading"><div><p class="eyebrow">CURRENT GAME</p><h2 id="statusText">轮到黑方落子</h2></div><div class="turn-chip" id="turnChip"><span class="stone black"></span>黑方</div></div>
+        <div class="board-wrap"><canvas id="board" aria-label="五子棋棋盘" role="img"></canvas></div>
+        <p class="board-hint">点击棋盘交叉点落子 · 先连成五子者胜</p>
+      </div>
+      <aside class="control-panel">
+        <div class="panel-section"><p class="eyebrow">PLAY MODE</p><div class="mode-switch" role="group" aria-label="对战模式"><button class="mode-btn active" data-mode="ai">人机对战</button><button class="mode-btn" data-mode="local">双人对战</button></div></div>
+        <div class="score-card"><div class="score-row"><span><i class="stone black"></i>黑方</span><strong id="blackScore">0</strong></div><div class="score-row"><span><i class="stone white"></i>白方</span><strong id="whiteScore">0</strong></div></div>
+        <div class="actions"><button class="primary-btn" id="newGame"><span>↻</span>重新开始</button><button class="secondary-btn" id="undo"><span>↶</span>悔棋</button></div>
+        <div class="panel-footer"><span>棋盘尺寸</span><strong>15 × 15</strong><span>当前规则</span><strong>标准五连</strong></div>
+      </aside>
+    </section>
+    <footer>棋间 · 给每一局留一点安静的时间</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
